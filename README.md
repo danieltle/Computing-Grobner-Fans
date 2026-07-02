@@ -2,8 +2,17 @@
 
 Implementations of algorithms for computing Gröbner fans, developed during the 2026 Mathematics REU at the University of Michigan.
 
-**Authors:** Daniel Le and George Simmons  
+## Authors:
+1. Daniel Le - Department of Mathematics, Colby College  
+2. George Simmons - Department of Computer Science, University of Michigan
 
-**Institution:** University of Michigan, Department of Mathematics
+## References
 
-**Program:** Mathematics REU 2026
+This project builds upon the algorithms and software developed in the following works:
+
+1. Anders Nedergaard Jensen. *Gfan Version 0.7: A User's Manual*.
+   Available at: https://users-math.au.dk/jensen/software/gfan/gfanmanual0.7.pdf
+
+2. Komei Fukuda, Anders N. Jensen, and Rekha R. Thomas.
+   *Computing Gröbner Fans*. arXiv:math/0509544 (2005).
+   Available at: https://arxiv.org/abs/math/0509544
