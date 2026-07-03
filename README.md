@@ -2,7 +2,7 @@
 
 Implementations of algorithms for computing Gröbner fans, developed during the 2026 Mathematics REU at the University of Michigan.
 
-## Authors:
+## Authors
 1. Daniel Le - Department of Mathematics, Colby College  
 2. George Simmons - Department of Computer Science, University of Michigan
 
