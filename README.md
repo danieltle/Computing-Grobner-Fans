@@ -6,6 +6,9 @@ Implementations of algorithms for computing Gröbner fans, developed during the 
 1. Daniel Le - Department of Mathematics, Colby College  
 2. George Simmons - Department of Computer Science, University of Michigan
 
+## Mentor
+Dr. Sabina Haque - Department of Mathematics & Center for the Study of Complex Systems - University of Michigan
+
 ## References
 
 This project builds upon the algorithms and software developed in the following works:
