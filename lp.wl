@@ -51,11 +51,6 @@ CreateLpSolver[name_String, methods_Association] := (
     "relativeInteriorPoint" -> (MessageDialog["relativeInteriorPoint method not supported in " <> name]; Abort[] &),
     "dual" -> (MessageDialog["dual method not supported in " <> name]; Abort[] &),
     "hasHomogeneousSolution" -> (MessageDialog["hasHomogeneousSolution method not supported in " <> name]; Abort[] &),
-    (* FIX: isFacet no longer silently defaults to True. C++'s base   *)
-    (* class has no concrete isFacet implementation (every subclass   *)
-    (* must override it), so the fallback here now matches every      *)
-    (* other method's "not supported" abort behavior instead of       *)
-    (* fabricating a result.                                          *)
     "isFacet" -> (MessageDialog["isFacet method not supported in " <> name]; Abort[] &)
   |>;
   (* Merge user-provided overridden concrete implementations *)
@@ -177,7 +172,7 @@ isInNonNegativeSpan[v_List, rays_List, linealitySpace_List] := Module[
     2
   ];
 
-  (* Constructing A2. C++ builds A2 by horizontally transposed pieces *)
+  (* Constructing A2 by horizontally transposed pieces *)
   temp = {-v}; (* 1 x n matrix *)
   A2 = Transpose[Join[temp, rays, linealitySpace]]; (* n x (1+numRays+numLin) *)
   
