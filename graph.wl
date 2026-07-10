@@ -1,4 +1,4 @@
-BeginPackage["GraphUtils`"]
+BeginPackage["Graph`"]
 
 graphDiameter::usage = "graphDiameter[graph_Association] returns {diameter, timesAttained}. \
 graph must have keys \"n\" (vertex count), \"edges\" (list of 0-indexed {a,b} pairs, \
