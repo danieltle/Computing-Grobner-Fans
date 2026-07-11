@@ -1,4 +1,4 @@
-(* File:    Graph.wl    *)
+(* File:    graph.wl    *)
 (* Author:  Daniel Le   *)
 (* Date:    07/10/2026  *)
 
