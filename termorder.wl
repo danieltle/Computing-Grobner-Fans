@@ -7,16 +7,16 @@
 
 BeginPackage["TermOrder`"]
 
-TermOrderRowDot::usage = "TermOrderRowDot[to_, row_, v_] mirrors TermOrder::rowDot (0-indexed row, matching C++).";
-TermOrderCompare::usage = "TermOrderCompare[to_, a_, b_, scaleA_:1, scaleB_:1, perturbationDegree_:-1] mirrors TermOrder::operator(). ASSUMPTION: default args (scaleA=1, scaleB=1, perturbationDegree=-1) inferred from usage elsewhere since termorder.h was not provided - verify against the header.";
+TermOrderRowDot::usage = "TermOrderRowDot[to_, row_, v_]";
+TermOrderCompare::usage = "TermOrderCompare[to_, a_, b_, scaleA_:1, scaleB_:1, perturbationDegree_:-1]";
 TermOrderPrint::usage = "TermOrderPrint[to_] mirrors TermOrder::print.";
 TermOrderPrintMatrix::usage = "TermOrderPrintMatrix[to_, dim_] mirrors TermOrder::printMatrix.";
 
-LexicographicTermOrder::usage = "LexicographicTermOrder[largest_:0] (default largest=0 is an ASSUMPTION - verify against termorder.h, since the .cpp calls LexicographicTermOrder() with no args elsewhere).";
+LexicographicTermOrder::usage = "LexicographicTermOrder[largest_:0]";
 LexicographicInvertedTermOrder::usage = "LexicographicInvertedTermOrder[]";
-ReverseLexicographicTermOrder::usage = "ReverseLexicographicTermOrder[largest_:0] (default largest=0 is an ASSUMPTION - see above).";
-ReverseLexicographicInvertedTermOrder::usage = "ReverseLexicographicInvertedTermOrder[]. Reverse lex, but comparison starts at the first coordinate. Per termorder.h: perturbation degree is NOT supported by design (not a translation gap) - CompareImpl always loops over all n indices regardless of perturbationDegree.";
-StandardGradedLexicographicTermOrder::usage = "StandardGradedLexicographicTermOrder[largest_:0] (default largest=0 is an ASSUMPTION - see above).";
+ReverseLexicographicTermOrder::usage = "ReverseLexicographicTermOrder[largest_:0]";
+ReverseLexicographicInvertedTermOrder::usage = "ReverseLexicographicInvertedTermOrder[]";
+StandardGradedLexicographicTermOrder::usage = "StandardGradedLexicographicTermOrder[largest_:0] ";
 WeightTermOrder::usage = "WeightTermOrder[weight_]";
 WeightReverseLexicographicTermOrder::usage = "WeightReverseLexicographicTermOrder[weight_]";
 MatrixTermOrder::usage = "MatrixTermOrder[weights_] where weights is a list of IntegerVectors (rows).";
