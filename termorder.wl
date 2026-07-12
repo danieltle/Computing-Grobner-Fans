@@ -31,8 +31,7 @@ TermOrderCompare[to_Association, a_List, b_List, scaleA_: 1, scaleB_: 1, perturb
 
 TermOrderPrint[to_Association] := to["PrintImpl"][];
 
-(* TermOrder::printMatrix - uses standardVector(dim,j), the j-th
-   standard basis vector of length dim, 0-indexed j to match C++. *)
+(* TermOrder::printMatrix - uses standardVector(dim,j), the j-th standard basis vector of length dim *)
 standardVector[dim_Integer, j_Integer] := ReplacePart[ConstantArray[0, dim], j + 1 -> 1];
 
 TermOrderPrintMatrix[to_Association, dim_Integer] := Module[{l},
@@ -121,9 +120,7 @@ ReverseLexicographicTermOrder[largest_Integer: 0] := <|
 
   "CompareImpl" -> Function[{a, b, scaleA, scaleB, perturbationDegree},
     Module[{n, nLoop, idx, A, B},
-      (* C++ uses a bare assert(a.size()==b.size()) here, with no
-         diagnostic printout - unlike LexicographicTermOrder above.
-         Preserved as a silent Abort to match that asymmetry. *)
+
       If[Length[a] != Length[b], Abort[]];
       n = Length[a];
       nLoop = If[perturbationDegree >= 0, perturbationDegree, n];
@@ -155,10 +152,6 @@ ReverseLexicographicInvertedTermOrder[] := <|
       (* Bare assert, no message, matching C++. *)
       If[Length[a] != Length[b], Abort[]];
       n = Length[a];
-      (* NOTE: unlike every sibling class, this loop ignores
-         perturbationDegree entirely and always runs over all n
-         indices. Confirmed intentional per termorder.h's class
-         comment: "perturbation degree not supported". Not a bug. *)
       Do[
         A = scaleA*a[[i + 1]];
         B = scaleB*b[[i + 1]];
@@ -289,10 +282,7 @@ MatrixTermOrder[weights_List] := <|
 
   "CompareImpl" -> Function[{a, b, scaleA, scaleB, perturbationDegree},
     Module[{da, db, d, n},
-      (* C++: assert(perturbationDegree) - this only checks nonzero,
-         it does NOT gate/truncate the loop below (unlike every other
-         Compare in this file). The loop always runs over ALL weight
-         rows regardless of perturbationDegree's value. Preserved as-is. *)
+    
       If[perturbationDegree == 0, Abort[]];
 
       n = Length[a];
